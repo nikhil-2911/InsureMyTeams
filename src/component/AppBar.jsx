@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Navbar, Form, Button, FormControl } from "react-bootstrap";
 
-const AppBar = (fillSearch) => {
+const AppBar = ({ fillSearch }) => {
   const [search, setSearch] = useState("");
   return (
     <>
