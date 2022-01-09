@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+// components
+import AppBar from "./component/AppBar";
+import Posts from "./component/Posts";
+import SearchProvider from "./context/searchContext";
 
-function App() {
+const App = () => {
+  const [search, setSearch] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SearchProvider value={search}>
+        <AppBar fillSearch={fillSearch} />
+        <Posts />
+      </SearchProvider>
+    </>
   );
-}
+};
 
 export default App;
